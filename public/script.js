@@ -58,7 +58,7 @@ formProduct.addEventListener('submit', async (event) => {
         return;
     }
 
-    submitBtn.disabled = true; // Désactiver le bouton pendant le traitement
+    submitBtn.disabled = true; /
 
     const productData = {
         maker: maker.value,
@@ -95,7 +95,7 @@ formProduct.addEventListener('submit', async (event) => {
         console.error('Erreur lors de l\'ajout du produit:', error);
         alert('Erreur lors de l\'ajout du produit. Veuillez réessayer.');
     } finally {
-        submitBtn.disabled = false; // Réactiver le bouton après le traitement
+        submitBtn.disabled = false; 
     }
 });
 
@@ -162,8 +162,8 @@ function displayProducts(products) {
 
             // Une fois que le produit est modifié, réinitialiser le bouton à son état d'origine
             submitBtn.onclick = async () => {
-                // Assurez-vous de récupérer l'ID à partir de la donnée
-                productData.product_aid = productId; // Ajouter l'ID pour la mise à jour
+                
+                productData.product_aid = productId; 
                 await fetch(`http://localhost/kalsteinProject/src/controller.php/api/produits/${productId}`, {
                     method: 'PUT',
                     headers: {
@@ -171,7 +171,7 @@ function displayProducts(products) {
                     },
                     body: JSON.stringify(productData),
                 });
-                fetchProducts(); // Recharger la liste des produits
+                fetchProducts(); 
             };
         });
     });
@@ -187,7 +187,7 @@ function displayProducts(products) {
                     });
                     const result = await response.json();
                     alert(result.message);
-                    fetchProducts(); // Recharge la liste des produits
+                    fetchProducts(); 
                 } catch (error) {
                     console.error('Erreur lors de la suppression du produit:', error);
                     alert('Erreur lors de la suppression du produit. Veuillez réessayer.');
