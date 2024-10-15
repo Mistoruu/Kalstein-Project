@@ -4,27 +4,26 @@ error_reporting(E_ALL);
 ini_set('memory_limit', "1024M");
 ini_set('max_execution_time', 600);
 
-require '../src/db.php'; // Assurez-vous que le chemin est correct
-require '../src/controller.php'; // Inclure le contrôleur
+require '../src/db.php'; 
+require '../src/controller.php'; 
 
-$db = (new Database())->connect(); // Crée une instance de Database et établit la connexion
-$productController = new ProductController($db); // Crée une instance de ProductController avec la connexion DB
+// Crée les instances de la BDD et établit la connexion avec une instance de ProductController
+$db = (new Database())->connect(); 
+$productController = new ProductController($db); 
 
 // Insertion dans la base de données
 if (isset($_POST['insert-product'])) {
-    $productController->createProduct(); // Appeler la méthode createProduct du contrôleur
+    $productController->createProduct(); 
 }
 
 // Suppression d'une entrée dans la base de données
 if (isset($_POST['delete-product'])) {
-    // On suppose que l'ID est transmis en POST avec le nom 'id-product'
-    $productController->deleteProduct($_POST['id-product']); // Appeler la méthode deleteProduct du contrôleur
+    $productController->deleteProduct($_POST['id-product']); 
 }
 
 // Mise à jour d'une entrée dans la base de données
 if (isset($_POST['update-product'])) {
-    // On suppose que l'ID est transmis en POST avec le nom 'id-product'
-    $productController->updateProduct($_POST['id-product']); // Appeler la méthode updateProduct du contrôleur
+    $productController->updateProduct($_POST['id-product']); 
 }
 
 // Récupération des produits
@@ -173,6 +172,6 @@ $products = $query->fetchAll(PDO::FETCH_OBJ);
     <input type="submit" name="insert-product" id="submit-btn" value="Ajouter le Produit">
 </form>
 
-<script src="public/js/script.js"></script> <!-- Chemin pour le fichier JavaScript -->
+<script src="public/js/script.js"></script> 
 </body>
 </html>
