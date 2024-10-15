@@ -14,7 +14,7 @@ class Product {
     private string $product_stock_status;
     private float $product_priceUSD;
     private float $product_priceEUR;
-    private string $product_create_at; // Changé en string pour stocker une date au format string
+    private string $product_create_at; 
     private string $product_description_fr;
     private PDO $db;
 
@@ -49,22 +49,10 @@ class Product {
         }
     }
 
-    // Getters pour récupérer les valeurs des propriétés
+    // Getter pout l'id
     public function getProductAid(): int {
         return $this->product_aid;
     }
 
-    public function getProductMaker(): string {
-        return $this->product_maker;
-    }
-
-    // Ajoutez d'autres getters si nécessaire
-
-    // Méthodes pour mettre à jour les valeurs si besoin
-    public function setProductMaker(string $maker): void {
-        $this->product_maker = $maker;
-    }
-
-    // Ajoutez d'autres setters si nécessaire
 }
 ?>
