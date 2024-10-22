@@ -35,7 +35,7 @@ Ce projet est une application PHP qui permet de gérer des produits à travers u
 
 ## Configuration
 
-##Base de données :
+## Base de données :
 
   Ouvrez phpMyAdmin dans votre navigateur (généralement à l'adresse http://localhost/phpmyadmin).
   Créez une nouvelle base de données nommée kalsteinProject.
