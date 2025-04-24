@@ -27,7 +27,7 @@ Ce projet est une application PHP qui permet de gérer des produits à travers u
 1. Clonez ce repository :
 
    ```bash
-   git clone https://github.com/votre-utilisateur/kalsteinProject.git
+   git clone https://github.com/Mistoruu/Kalstein-Project
   
 2. Assurez-vous d'avoir installé XAMPP ou un autre serveur local pour exécuter PHP et MySQL.
   
